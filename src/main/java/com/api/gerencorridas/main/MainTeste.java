@@ -4,13 +4,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.api.gerencorridas.model.Carro;
+import com.api.gerencorridas.model.Cliente;
+import com.api.gerencorridas.model.Corrida;
 import com.api.gerencorridas.model.Endereco;
 import com.api.gerencorridas.model.Motorista;
 import com.google.gson.Gson;
 
 public class MainTeste {
 	public static void main(String[] args) {
-		montarMotorista();	
+		Corrida corrida = new Corrida();
+		Motorista motorista = new Motorista();
+		Cliente cliente = new Cliente();
+		Carro carro = new Carro();
+		corrida.setCarro(carro);
+		corrida.setCliente(cliente);
+		corrida.setMotorista(motorista);
+		System.out.println(new Gson().toJson(corrida));
+		montarMotorista();
 	}
 
 	

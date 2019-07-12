@@ -1,7 +1,8 @@
 package com.api.gerencorridas.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.api.gerencorridas.model.Cliente;
-
-public interface ClienteReposity extends CrudRepository<Cliente, Integer>{}
+@Repository
+public interface ClienteReposity extends JpaRepository<Cliente, Integer>{}
