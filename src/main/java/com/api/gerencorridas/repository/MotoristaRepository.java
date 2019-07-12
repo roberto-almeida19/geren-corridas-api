@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import com.api.gerencorridas.model.Motorista;
 
 @Repository
-public interface MotoristaRepo extends JpaRepository<Motorista, Integer>{
+public interface MotoristaRepository extends JpaRepository<Motorista, Integer>{
 	
 }

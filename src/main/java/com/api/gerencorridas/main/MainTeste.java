@@ -17,12 +17,6 @@ public class MainTeste {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 	private static void montarMotorista() {
 		Motorista motorista = new Motorista();
 		motorista.setNome("Roberto Almeida");

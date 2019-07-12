@@ -9,15 +9,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.api.gerencorridas.model.Corrida;
 import com.api.gerencorridas.repository.CorridaRepository;
+import com.api.gerencorridas.repository.MotoristaRepository;
 
 @Service
 @Transactional
 public class CorridaService {
 
-	@Autowired
-	CorridaRepository corridaRepository;
-
+	@Autowired	CorridaRepository corridaRepository;
+	@Autowired MotoristaRepository motoristaRepo;
 	public void salvar(Corrida corrida) {
+		
+		
+		
+		
 		corridaRepository.save(corrida);
 	}
 

@@ -9,13 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.api.gerencorridas.model.Motorista;
 import com.api.gerencorridas.repository.EnderecoRepository;
-import com.api.gerencorridas.repository.MotoristaRepo;
+import com.api.gerencorridas.repository.MotoristaRepository;
 
 @Service
 @Transactional
 public class MotoristaService {
 
-	@Autowired MotoristaRepo motoristaRepo;
+	@Autowired MotoristaRepository motoristaRepo;
 	@Autowired EnderecoRepository enderecoRepository;
 	public void salvar(Motorista motorista) {
 		enderecoRepository.save(motorista.getEndereco());
