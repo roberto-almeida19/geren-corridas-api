@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.api.gerencorridas.model.Carro;
 import com.api.gerencorridas.model.Cliente;
 import com.api.gerencorridas.model.Corrida;
-import com.api.gerencorridas.model.Motorista;
 import com.api.gerencorridas.repository.CarroRepository;
 import com.api.gerencorridas.repository.ClienteReposity;
 import com.api.gerencorridas.repository.CorridaRepository;
@@ -24,14 +22,13 @@ public class CorridaService {
 	@Autowired MotoristaRepository motoristaRepo;
 	@Autowired ClienteReposity clienteReposity;
 	@Autowired CarroRepository carroRepository;
+	
 	public void salvar(Corrida corrida) {
-		Motorista motorista =  motoristaRepo.getOne(corrida.getMotorista().getId());
 		Cliente cliente = clienteReposity.getOne(corrida.getCliente().getId());
-		Carro carro = carroRepository.getOne(corrida.getCarro().getId());
 		corrida.setCliente(cliente);
-		corrida.setMotorista(motorista);
-		corrida.setCarro(carro);
 		corridaRepository.save(corrida);
+		cliente.addCorrida(corrida);
+		clienteReposity.save(cliente);
 	}
 
 	public Corrida buscar(int id) {

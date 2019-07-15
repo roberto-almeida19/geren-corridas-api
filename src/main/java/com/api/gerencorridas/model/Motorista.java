@@ -1,8 +1,6 @@
 package com.api.gerencorridas.model;
 
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
