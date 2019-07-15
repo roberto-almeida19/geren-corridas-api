@@ -13,14 +13,14 @@ import com.google.gson.Gson;
 public class MainTeste {
 	public static void main(String[] args) {
 		Corrida corrida = new Corrida();
-		Motorista motorista = new Motorista();
 		Cliente cliente = new Cliente();
-		Carro carro = new Carro();
-		corrida.setCarro(carro);
+		cliente.setId(1);
 		corrida.setCliente(cliente);
+		Motorista motorista =  new Motorista();
+		motorista.setId(1);
 		corrida.setMotorista(motorista);
 		System.out.println(new Gson().toJson(corrida));
-		montarMotorista();
+	
 	}
 
 	

@@ -27,8 +27,10 @@ public class CorridaService {
 	public void salvar(Corrida corrida) {
 		Motorista motorista =  motoristaRepo.getOne(corrida.getMotorista().getId());
 		Cliente cliente = clienteReposity.getOne(corrida.getCliente().getId());
+		Carro carro = carroRepository.getOne(corrida.getCarro().getId());
 		corrida.setCliente(cliente);
 		corrida.setMotorista(motorista);
+		corrida.setCarro(carro);
 		corridaRepository.save(corrida);
 	}
 
