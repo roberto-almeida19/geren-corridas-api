@@ -38,6 +38,7 @@ public class MainTeste {
 		Set<Carro> carros = new HashSet<>();
 		carros.add(carro);
 		motorista.setCarros(carros);
+		motorista.setUrlFoto("TESTE");
 		System.out.println(new Gson().toJson(motorista));
 	}
 }

@@ -17,16 +17,6 @@ public class Carro {
 	private String modelo;
 	private String marca;
 	
-	@ManyToOne
-	@JoinColumn
-	private Motorista motorista;
-	
-	public Motorista getMotorista() {
-		return motorista;
-	}
-	public void setMotorista(Motorista motorista) {
-		this.motorista = motorista;
-	}
 	public int getId() {
 		return id;
 	}

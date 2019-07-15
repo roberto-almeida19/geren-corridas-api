@@ -23,6 +23,7 @@ public class MotoristaController {
 	
 	@PostMapping(value="/motoristas")
 	public void salvar(@RequestBody Motorista motorista) {
+		System.out.println(motorista.getUrlFoto());
 		motoristaService.salvar(motorista);
 	}
 	

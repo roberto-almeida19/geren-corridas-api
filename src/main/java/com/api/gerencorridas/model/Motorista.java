@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,17 +21,33 @@ public class Motorista {
 	private String nome;
 	@OneToOne
 	private Endereco endereco;
+	@Column(columnDefinition="text")
+	private String urlFoto;
 	@OneToMany(cascade = CascadeType.ALL)
 	private Set<Carro> carros;
-
 	@OneToMany
 	private Set<Corrida> corridas;
 
-	public Motorista(String nome,Carro... carros) {
+	public String getUrlFoto() {
+		return urlFoto;
+	}
+
+	public void setUrlFoto(String urlFoto) {
+		this.urlFoto = urlFoto;
+	}
+
+	public Set<Corrida> getCorridas() {
+		return corridas;
+	}
+
+	public void setCorridas(Set<Corrida> corridas) {
+		this.corridas = corridas;
+	}
+
+
+	public Motorista(String nome) {
 		super();
 		this.nome = nome;
-		this.carros = Stream.of(carros).collect(Collectors.toSet());
-		this.carros.forEach( x -> x.setMotorista(this));
 	}
 
 	public Motorista() {
