@@ -24,7 +24,14 @@ public class MainTeste {
 		Motorista motorista =  new Motorista();
 		motorista.setId(1);
 		corrida.setMotorista(motorista);
+		Carro carro = new Carro();
+		carro.setId(1);
+		carro.setMarca("Teste");
+		carro.setModelo("Teste");
+		corrida.setCarro(carro);
 		System.out.println(new Gson().toJson(corrida));
+		montarMotorista();
+	
 	}
 	private static void montarMotorista() {
 		Motorista motorista = new Motorista();
